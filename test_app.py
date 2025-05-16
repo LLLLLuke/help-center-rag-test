@@ -9,7 +9,7 @@ import faiss
 qa_pairs_path = "output.json"
 index_path = "test.index"
 
-e5_model = SentenceTransformer("intfloat/multilingual-e5-large")
+e5_model = SentenceTransformer("intfloat/multilingual-e5-large", device='cpu')
 with open(qa_pairs_path, 'r', encoding='utf-8') as f:
     bm_mt5_qa_pairs = json.load(f)
 bm_mt5_index = faiss.read_index(index_path)
